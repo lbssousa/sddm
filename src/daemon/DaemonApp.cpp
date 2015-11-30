@@ -78,6 +78,8 @@ namespace SDDM {
 
         // add a seat
         m_seatManager->createSeat(QStringLiteral("seat0"));
+        foreach(const QString &s, mainConfig.LoadSeats.get())
+            m_seatManager->createSeat(s);
     }
 
     bool DaemonApp::testing() const {
